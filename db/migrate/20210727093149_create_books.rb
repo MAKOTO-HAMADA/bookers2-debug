@@ -1,10 +1,10 @@
 class CreateBooks < ActiveRecord::Migration[6.1]
   def change
     create_table :books do |t|
-      t.string :title
-      t.text :body
+      t.string  :title
+      t.text    :body
       t.integer :user_id
-      t.timestamps
+      t.timestamps # 何これ？
     end
   end
 end
