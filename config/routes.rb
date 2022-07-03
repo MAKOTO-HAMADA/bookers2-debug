@@ -12,8 +12,10 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create, :destroy]
   end
   
-  resources :users, only: [:index,:show,:edit,:update]
-  
-  # devise_for :users　元々の場所！
+  resources :users, only: [:index,:show,:edit,:update] do
+    resource :relationships, only:[:create, :destroy]
+    get "relationship/follows" => "relationships#follows"
+    get "relationship/followers" => "relationships#followers"
+  end
   
 end

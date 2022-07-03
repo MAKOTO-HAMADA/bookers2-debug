@@ -1,0 +1,34 @@
+<h1>Followed Users</h1>
+
+<% if @followers_relationships.count == 0 %>
+  ユーザーはいません
+
+<% elsif %>
+<table class='table'>
+  <!-- １列目 -->
+  <tr>
+    <th>image</th>
+    <th>name</th>
+  </tr>
+  <!--２列目-->
+  <% @followers_relationships.each do |relationship| %>
+    <% @users.each do |user| %>
+      <% if user.id == relationship.follower_id %>
+      <tr>
+        <!-- プロフ画像 -->
+        <td><%= image_tag user.get_profile_image, size:'50x50' %></td>
+        <!-- 名前 -->
+        <td><%= user.name %></td>
+        <!-- フォロー数 -->
+        <td>フォロー数: <%= user.follower_to_followeds.count %></td>
+        <!-- フォロワー数 -->
+        <td>フォロワー数: <%= user.followed_to_followers.count %></td>
+        <!-- books/showリンク-->
+        <td><%= link_to "Show", user_path(user) %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>
+
+<% end %>

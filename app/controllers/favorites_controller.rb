@@ -8,7 +8,7 @@ class FavoritesController < ApplicationController
     # show ページの、URL末尾の"値"や、
     # indexページの♡をクリックした時に送信された"値"を、
     # book.idとして取得している
-    # だから、book_id = boo.id のように代入するコードを書かなくて良い！
+    # だから、book_id = book.id のように代入するコードを書かなくて良い！
     
     favorite = current_user.favorites.new(book_id: book.id)
     # current_userの、favoritesテーブルに空箱を作る(new)

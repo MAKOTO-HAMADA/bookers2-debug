@@ -6,7 +6,7 @@ class Book < ApplicationRecord
   
   belongs_to :user        # :〇〇に属する！！
   has_many   :favorites, dependent: :destroy
-  has_many :book_comments, dependent: :destroy
+  has_many   :book_comments, dependent: :destroy
   
   has_one_attached :image # 一つの添付物を持つ！！
   
