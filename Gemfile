@@ -54,3 +54,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
+
+# デザイン
+gem 'bootstrap', '~> 5.1.3'
+# 非同期通信を行う為に、JavaScriptのjQueryのGemを導入する必要がある
+gem 'jquery-rails'
